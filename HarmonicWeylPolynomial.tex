@@ -209,7 +209,7 @@ Combining the above asymptotic with (\ref{incGamma}) and (\ref{GammaChange}), it
 where we simply substitute $1$ for $\alpha$ and $0$ for $k$ to find $a_n$.  Then since by (\ref{bkck}) we have that $b_{\alpha n} = nt a_{\alpha n - 1}$ and $c_{\alpha n} = (nt)^2a_{\alpha n - 2} + nt a_{\alpha n - 1}$ it follows that $b_{\alpha n}\sim b_n\sim nte^{nt}$ and $c_{\alpha n}\sim c_n\sim(nt+n^2t^2)e^{nt}$ where $\sim$ denotes asymptotic equivalence. Furthermore we now have
 \[\lim_{n\rightarrow\infty}\frac{r_1^2+r_2^2-2r_{12}^2}{n^{3/2}t r_3^2\sqrt{(r_1+r_2)^2-4r_{12}^2}}=\frac{1}{2}\sqrt{t},\quad\text{for $t<\alpha$}.\]
 
-For $t>\alpha$ we will use the endpoint analysis of the Laplace method as outlined in ~\cite[\S3.3]{Miller}.  We begin by using the incomplete gamma function as before, defining $\kappa=\alpha+O(\frac{1}{n})$ so that $\kappa n\in\mathbb{N}$
+For $t>\alpha$ we will use the endpoint analysis of the Laplace method as outlined in ~\cite[\S3.3]{Miller}.  We begin by using the incomplete gamma function as before, defining $\kappa=\alpha+O(\frac{1}{n})$ so that $\alpha_{\kappa n}$ plays the role of $\alpha_m$ and $\kappa n\in\mathbb{N}$
 \[a_{\kappa n}=\frac{e^{nt}n^{\kappa n+1}}{(\alpha n)!}\int_{t}^\infty e^{n(\kappa\log y-y)}dy.\]
 Now set $g(y)=\kappa\log y-y$.  For large enough $n$, this function is maximized at $t$ for $t>\alpha$, which can be seen by $g'(y)=\frac{\kappa}{y}-1<0$ for large enough $n$.  Let $\tilde{g}(y)=g(y)-g(t)$.  Then $a_{\kappa n}$ can be rewritten as
 \[a_{\kappa n}=\frac{n^{\kappa n+1}t^{\kappa n}}{(\kappa n)!}\int_{0}^\infty e^{n\tilde{g}(t+y)}dy.\]
@@ -260,7 +260,7 @@ Similarly, when $0<\alpha<1<t$,
 \[\lim_{n\rightarrow\infty}\frac{n!(nt)^{\kappa n}}{(\kappa n)!(nt)^{n}}=0.\]
 For this region, $a_{\kappa n}$, $b_{\kappa n}$, $c_{\kappa n}$, $a_n$, $b_n$, and $c_n$ are all calculated based on (\ref{Milleran}), (\ref{Millerbn}), and (\ref{Millercn}) where $\kappa=1$ for $a_n$, $b_n$ and $c_n$.  Therefore,
 \[\lim_{n\rightarrow\infty}\frac{r_3}{a_n}=1,\quad\lim_{n\rightarrow\infty}\frac{r_1}{a_nc_n-b_n^2}=1,\quad\text{and}\quad\lim_{n\rightarrow\infty}\frac{r_2}{\frac{(nt)^{2n+2}}{(n!)^2}}=\lim_{n\rightarrow\infty}\frac{r_{12}}{\frac{(nt)^{2n+2}}{(n!)^2}}=0.\]
-Thus when $0<\alpha<1<t$,
+It's worth noting here that it was necessary to compute second order Taylor polynomials in order to see that $\lim_{n\rightarrow\infty}\frac{r_1}{a_nc_n-b_n^2}\neq0$ when $t>1$. Now we can conclude that when $0<\alpha<1<t$,
 \begin{align*}
 	\lim_{n\rightarrow\infty}\frac{r_1^2+r_2^2-2r_{12}}
 	{n^{3/2}tr_3^2\sqrt{(r_1+r_2)^2-4r_{12}^2}}
