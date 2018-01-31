@@ -293,10 +293,10 @@ Thus if we divide the integrand by $n$, as $n\rightarrow\infty$ we have a pointw
 \end{equation}
 
 \subsection{Bounding Functions}
-In this section we obtain the bounding functions necessary to apply Theorem \ref{GLDCT}.  When $m=\alpha n$ for $\alpha\in(0,1)$, we divide \ref{MainInt} by $m^{3/2}=\alpha^{3/2}n^{3/2}$ in order to establish (\ref{MainThm}).
-\begin{equation}\label{MainInt2}\frac{r_1^2+r_2^2-2r_{12}^2}{n^{3/2}tr_3^2\sqrt{(r_1+r_2)^2-4r_{12}^2}}.
+In this section we obtain the bounding functions necessary to apply Theorem \ref{GLDCT}.  With the aim of establishing (\ref{MainThm}) it is natural to divide (\ref{MainInt}) by $m^{3/2}=\alpha^{3/2}n^{3/2}$ in order to show that the following integral converges to 1.
+\begin{equation}\label{MainInt2}\int_0^\infty\frac{r_1^2+r_2^2-2r_{12}^2}{n^{3/2}tr_3^2\sqrt{(r_1+r_2)^2-4r_{12}^2}}dt.
 \end{equation}
-Then we have the following to help us simplify the denominator:
+Then we have the following to help us simplify the denominator of the integrand:
 \begin{lemma}\label{CSApplication}
 If $x$ is a positive real number and $a_k=\sum_{j=0}^k\frac{x^j}{j!}$, $b_k=\sum_{j=1}^k\frac{jx^j}{j!}$, and $c_k=\sum_{j=1}^k\frac{j^2x^j}{j!}$, then $(a_n+a_m)c_nc_m\ge c_nb_m^2+c_mb_n^2$, for $n,m\in\mathbb{N}$.
 \end{lemma}
