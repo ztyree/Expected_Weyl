@@ -33,7 +33,7 @@ Li and Wei (2009) studied the density of zeros of Gaussian harmonic polynomials 
 \maketitle
 
 \section{Introduction}
-A harmonic polynomial is a complex valued harmonic function given by:
+A harmonic polynomial is a complex-valued harmonic function given by:
 \[H_{n,m}(z)=p(z)+q(\overline{z}),\]
 where $p$ and $q$ are analytic complex polynomials of degree $n$ and $m$ respectively and $\overline{z}$ denotes the complex conjugate of $z$.  Since $H$ is not analytic, the Fundamental Theorem of Algebra does not apply, and it is natural to ask how many zeros $H$ can have, i.e. how many solutions are there to $H_{n,m}(z)=0$.
 
@@ -206,7 +206,7 @@ We let $g(y)=\alpha \ln y-y-\frac{k}{n}\ln y$ and thus $g'(y)=\frac{1}{y}\left(\
 \end{align*}
 Combining the above asymptotic with (\ref{incGamma}) and (\ref{GammaChange}), it follows from Stirling's formula that
 \[\lim_{n\rightarrow\infty}\frac{a_{\alpha n-k}}{e^{nt}}=\lim_{n\rightarrow\infty}\frac{a_{n}}{e^{nt}}=1,\]
-where we simply plug in $1$ for $\alpha$ and $0$ for $k$ to find $a_n$.  Then $b_{\alpha n}\sim b_n\sim nte^{nt}$ and $c_{\alpha n}\sim c_n\sim(nt+n^2t^2)e^{nt}$ and
+where we simply substitute $1$ for $\alpha$ and $0$ for $k$ to find $a_n$.  Then since by (\ref{bkck}) we have that $b_{\alpha n} = nt a_{\alpha n - 1}$ and $c_{\alpha n} = (nt)^2a_{\alpha n - 2} + nt a_{\alpha n - 1}$ it follows that $b_{\alpha n}\sim b_n\sim nte^{nt}$ and $c_{\alpha n}\sim c_n\sim(nt+n^2t^2)e^{nt}$ where $\sim$ denotes asymptotic equivalence. Furthermore we now have
 \[\lim_{n\rightarrow\infty}\frac{r_1^2+r_2^2-2r_{12}^2}{n^{3/2}t r_3^2\sqrt{(r_1+r_2)^2-4r_{12}^2}}=\frac{1}{2}\sqrt{t},\quad\text{for $t<\alpha$}.\]
 
 For $t>\alpha$ we will use the endpoint analysis of the Laplace method as outlined in ~\cite[\S3.3]{Miller}.  We begin by using the incomplete gamma function as before, defining $\kappa=\alpha+O(\frac{1}{n})$ so that $\kappa n\in\mathbb{N}$
