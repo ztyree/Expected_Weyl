@@ -176,7 +176,7 @@ We use the incomplete Gamma function in combination with Laplace's method to eva
 \[\Gamma(n,t):=\int_t^\infty x^{n-1}e^{-x}dx=(n-1)!e^{-t}\sum_{j=0}^{n-1}\frac{t^j}{j!}\]
 which implies
 \[\sum_{j=0}^n\frac{t^j}{j!}=\frac{e^t\Gamma(n+1,t)}{n!}\]
-and for a function $k=k(n)$ which is $O(1)$ as $n\rightarrow \infty$ such that $\alpha n +k\in\mathbb{N}$,
+and for a function $k=k(n)$ which is $O(1)$ as $n\rightarrow \infty$ such that $\alpha n -k\in\mathbb{N}$,
 \begin{equation}
 	\label{UpperGamma}
 	a_{\alpha n-k}=\sum_{j=0}^{\alpha n-k}\frac{(nt)^j}{j!}
@@ -212,7 +212,7 @@ where we simply substitute $1$ for $\alpha$ and $0$ for $k$ to find $a_n$.  Then
 \[\lim_{n\rightarrow\infty}\frac{r_1^2+r_2^2-2r_{12}^2}{n^{3/2}t r_3^2\sqrt{(r_1+r_2)^2-4r_{12}^2}}=\frac{1}{2}\sqrt{t},\quad\text{for $t<\alpha$}.\]
 
 For $t>\alpha$ we will use the endpoint analysis of the Laplace method as outlined in ~\cite[\S3.3]{Miller}.  We begin by using the incomplete gamma function as before, defining $\kappa=\alpha+O(\frac{1}{n})$ so that $\alpha_{\kappa n}$ plays the role of $\alpha_m$ and $\kappa n\in\mathbb{N}$
-\[a_{\kappa n}=\frac{e^{nt}n^{\kappa n+1}}{(\alpha n)!}\int_{t}^\infty e^{n(\kappa\log y-y)}dy.\]
+\[a_{\kappa n}=\frac{e^{nt}n^{\kappa n+1}}{(\kappa n)!}\int_{t}^\infty e^{n(\kappa\log y-y)}dy.\]
 Now set $g(y)=\kappa\log y-y$.  For large enough $n$, this function is maximized at $t$ for $t>\alpha$, which can be seen by $g'(y)=\frac{\kappa}{y}-1<0$ for large enough $n$.  Let $\tilde{g}(y)=g(y)-g(t)$.  Then $a_{\kappa n}$ can be rewritten as
 \[a_{\kappa n}=\frac{n^{\kappa n+1}t^{\kappa n}}{(\kappa n)!}\int_{0}^\infty e^{n\tilde{g}(t+y)}dy.\]
 Then there is a function, $y(s)$, guaranteed by the implicit function theorem, such that $\tilde{g}(t+y(s))=-s$.  We use this as a change of variables and obtain
@@ -313,8 +313,8 @@ resulting in a bounding function for (\ref{MainInt2}) of
 \\\le&\frac{r_1-r_2}{n^{3/2}tr_3^2}+\frac{\sqrt{2(r_1r_2-r_{12}^2)}}{n^{3/2}tr_3^{3/2}}.
 \end{align*}
 Then we note that
-\[\frac{d}{dt}\left[a_k\right]=n\sum_{j=1}^kj\frac{(nt)^{j-1}}{j!}=\frac{1}{t}b_k,\text{ and }\frac{d}{dt}\left[b_k\right]=\frac{1}{t}c_k,\] and thus
-\[\frac{d}{dt}\left[\frac{b_n-b_m}{a_n+a_m}\right]=\frac{(a_n+a_m)(c_n-c_m)-b_n^2+b_m^2}{t(a_n+a_m)^2}=\frac{r_1-r_2}{tr_3^2}.\]
+\[\frac{d}{dt}a_k=n\sum_{j=1}^kj\frac{(nt)^{j-1}}{j!}=\frac{1}{t}b_k,\text{ and }\frac{d}{dt}b_k=\frac{1}{t}c_k,\] and thus
+\[\frac{d}{dt}\frac{b_n-b_m}{a_n+a_m}=\frac{(a_n+a_m)(c_n-c_m)-b_n^2+b_m^2}{t(a_n+a_m)^2}=\frac{r_1-r_2}{tr_3^2}.\]
 Then
 \[\lim_{t\to\infty}\int_\mathbb{R}\frac{r_1-r_2}{n^{3/2}tr_3^2}dt=\lim_{t\rightarrow\infty}\frac{\sum_{k=m+1}^nk\frac{(nt)^k}{k!}}{n^{3/2}(a_m+a_n)}=n^{-1/2}.\]
 Moreover,
