@@ -178,33 +178,35 @@ which implies
 \[\sum_{j=0}^n\frac{t^j}{j!}=\frac{e^t\Gamma(n+1,t)}{n!}\]
 and for a function $k=k(n)$ which is $O(1)$ as $n\rightarrow \infty$ such that $\alpha n +k\in\mathbb{N}$,
 \begin{equation}
-	\label{incGamma}
+	\label{UpperGamma}
 	a_{\alpha n-k}=\sum_{j=0}^{\alpha n-k}\frac{(nt)^j}{j!}
 	=\frac{e^{nt}\Gamma(\alpha n-k+1,nt)}{(\alpha n-k)!}
 	=\frac{e^{nt}}{(\alpha n-k)!}\int_{nt}^\infty x^{\alpha n-k}e^{-x}dx.
 \end{equation}
-We make the change of variables, $x=ny$
+Using the fact that the gamma function can be expressed as the sum of the upper and lower incomplete gamma functions we can rewrite this expression as
 \begin{equation}
-	\label{GammaChange}
-	\int_t^\infty(ny)^{\alpha n-k}e^{-ny}n\ dy
-	=n^{\alpha n-k+1}\int_t^\infty e^{(\alpha \ln y-y-\frac{k}{n}\ln y)n}dy.
+	\label{LowerGamma}
+	\frac{e^{nt}}{(\alpha n-k)!}\int_{nt}^\infty x^{\alpha n-k}e^{-x}dx
+	=e^{nt}\left(1-\frac{1}{(\alpha n-k)!}\int_0^{nt} x^{\alpha n-k}e^{-x}dx\right).
 \end{equation}
-We let $g(y)=\alpha \ln y-y-\frac{k}{n}\ln y$ and thus $g'(y)=\frac{1}{y}\left(\alpha-\frac{k}{n}\right)-1$ implies $g$ is maximized at $\alpha-\frac{k}{n}$.  For $t<\alpha$ and $k$ (not dependent on $t$) there is a large enough $n$ so that $\alpha-\frac{k}{n}\in(t,\infty)$.  We may then use the Laplace method.
+Let $f(x)=x^{\alpha n-k}e^{-x}$ then $f'(x)=e^{-x}x^{\alpha n - k - 1}(\alpha n - k - x)$ implies $f$ is maximized at $\alpha n - k$. Since for $t<\alpha$ and $n$ large, $nt < \alpha n - k$ we have by Extreme Value Theorem
+\begin{equation}
+\label{GammaIneq}
+\frac{1}{(\alpha n-k)!}\int_0^{nt} x^{\alpha n-k}e^{-x}dx <
+\frac{(nt)^{\alpha n - k}e^{-nt}}{(\alpha n - k)!}nt
+\end{equation}
+Now Stirling's formula gives us an asymptotic expression for factorials
+\[
+n!\sim \sqrt{2\pi n}\left(\frac{n}{e}\right)^n
+\]
+Using this we can rewrite the LHS of (\ref{GammaIneq}) as
 \begin{align*}
-	\int_t^\infty e^{(\alpha\ln y-y-\frac{k}{n}\ln y)n}dy\sim
-		&\int_{-\infty}^\infty e^{n\left(\left(\alpha-\frac{k}{n}\right)
-		\left(\ln\left(\alpha-\frac{k}{n}\right)-1\right)
-		-\frac{1}{2}\frac{1}{\alpha-\frac{k}{n}}
-		\left(y-\alpha+\frac{k}{n}\right)^2\right)}dy
-	\\=&e^{n\left(\left(\alpha-\frac{k}{n}\right)
-		\left(\ln\left(\alpha-\frac{k}{n}\right)-1\right)\right)}
-		\int_{-\infty}^\infty e^{\frac{-\left(y-\alpha+\frac{k}{n}\right)^2}
-		{2\frac{\alpha n-k}{n^2}}}dy
-	\\=&e^{n\left(\left(\alpha-\frac{k}{n}\right)
-		\left(\ln\left(\alpha-\frac{k}{n}\right)-1\right)\right)}
-		\frac{\sqrt{2\pi(\alpha n-k)}}{n}.
+\frac{(nt)^{\alpha n - k}e^{-nt}}{(\alpha n - k)!}nt \sim
+&\frac{(nt)^{\alpha n - k}e^{\alpha n - k}}{(\alpha n - k)^{\alpha n - k}e^{nt}\sqrt{2\pi (\alpha n - k)}}nt
+\\=& \frac{n^{\frac{1}{2}}t}{\sqrt{2\pi(\alpha - \frac{k}{n})}}\left(\frac{t}{\alpha - \frac{k}{n}}e^{1 - \frac{t}{\alpha - \frac{k}{n}}}\right)^{\alpha n - k}
+\\ \rightarrow& \ 0 \quad\text{as}\quad n\rightarrow\infty.
 \end{align*}
-Combining the above asymptotic with (\ref{incGamma}) and (\ref{GammaChange}), it follows from Stirling's formula that
+Combining the above asymptotic with (\ref{UpperGamma}) (\ref{LowerGamma}) and (\ref{GammaIneq}), it follows from Stirling's formula that
 \[\lim_{n\rightarrow\infty}\frac{a_{\alpha n-k}}{e^{nt}}=\lim_{n\rightarrow\infty}\frac{a_{n}}{e^{nt}}=1,\]
 where we simply substitute $1$ for $\alpha$ and $0$ for $k$ to find $a_n$.  Then since by (\ref{bkck}) we have that $b_{\alpha n} = nt a_{\alpha n - 1}$ and $c_{\alpha n} = (nt)^2a_{\alpha n - 2} + nt a_{\alpha n - 1}$ it follows that $b_{\alpha n}\sim b_n\sim nte^{nt}$ and $c_{\alpha n}\sim c_n\sim(nt+n^2t^2)e^{nt}$ where $\sim$ denotes asymptotic equivalence. Furthermore we now have
 \[\lim_{n\rightarrow\infty}\frac{r_1^2+r_2^2-2r_{12}^2}{n^{3/2}t r_3^2\sqrt{(r_1+r_2)^2-4r_{12}^2}}=\frac{1}{2}\sqrt{t},\quad\text{for $t<\alpha$}.\]
