@@ -211,7 +211,7 @@ Combining the above asymptotic with (\ref{UpperGamma}) (\ref{LowerGamma}) and (\
 where we simply substitute $1$ for $\alpha$ and $0$ for $k$ to find $a_n$.  Then since by (\ref{bkck}) we have that $b_{\alpha n} = nt a_{\alpha n - 1}$ and $c_{\alpha n} = (nt)^2a_{\alpha n - 2} + nt a_{\alpha n - 1}$ it follows that $b_{\alpha n}\sim b_n\sim nte^{nt}$ and $c_{\alpha n}\sim c_n\sim(nt+n^2t^2)e^{nt}$ where $\sim$ denotes asymptotic equivalence. Furthermore we now have
 \[\lim_{n\rightarrow\infty}\frac{r_1^2+r_2^2-2r_{12}^2}{n^{3/2}t r_3^2\sqrt{(r_1+r_2)^2-4r_{12}^2}}=\frac{1}{2}\sqrt{t},\quad\text{for $t<\alpha$}.\]
 
-For $t>\alpha$ we will use the endpoint analysis of the Laplace method as outlined in ~\cite[\S3.3]{Miller}.  We begin by using the incomplete gamma function as before, defining $\kappa=\alpha+O(\frac{1}{n})$ so that $\alpha_{\kappa n}$ plays the role of $\alpha_m$ and $\kappa n\in\mathbb{N}$
+For $t>\alpha$ we will use the endpoint analysis of the Laplace method as outlined in ~\cite[\S3.3]{Miller}.  We begin by using the incomplete gamma function as before, defining $\kappa=\alpha+O(\frac{1}{n})$ so that $a_{\kappa n}$ plays the role of $\alpha_m$ and $\kappa n\in\mathbb{N}$
 \[a_{\kappa n}=\frac{e^{nt}n^{\kappa n+1}}{(\kappa n)!}\int_{t}^\infty e^{n(\kappa\log y-y)}dy.\]
 Now set $g(y)=\kappa\log y-y$.  For large enough $n$, this function is maximized at $t$ for $t>\alpha$, which can be seen by $g'(y)=\frac{\kappa}{y}-1<0$ for large enough $n$.  Let $\tilde{g}(y)=g(y)-g(t)$.  Then $a_{\kappa n}$ can be rewritten as
 \[a_{\kappa n}=\frac{n^{\kappa n+1}t^{\kappa n}}{(\kappa n)!}\int_{0}^\infty e^{n\tilde{g}(t+y)}dy.\]
