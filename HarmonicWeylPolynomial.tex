@@ -172,7 +172,7 @@ and then using the change of variables $\lvert z\rvert^2=nt$ this becomes
 \end{equation}
 where $r_1$, $r_2$, $r_3$ and $r_{12}$ are defined as before with $nt$ substituted for $\lvert z\rvert^2$.  Note that with this change of variable, the notation $a_n$ becomes ambiguous, thus we clarify that the $n$ in $a_n$ refers only to the upper bound in the index of the sum, that is, $a_{n-1}=\sum_{j=0}^{n-1}(nt)^j/j!$.
 
-We use the incomplete Gamma function in combination with Laplace's method to evaluate the limit of the integrand.  It is necessary to split the domain into two cases. We begin by treating the case $t<\alpha.$ We have the following identity for the incomplete Gamma function when $n\in\mathbb{N}$,
+We use the incomplete Gamma function in combination with Laplace's method to evaluate the limit of the integrand.  It is necessary to split the domain into two cases. We begin by treating the case $t<\alpha.$ 	We have the following identity for the incomplete Gamma function when $n\in\mathbb{N}$,
 \[\Gamma(n,t):=\int_t^\infty x^{n-1}e^{-x}dx=(n-1)!e^{-t}\sum_{j=0}^{n-1}\frac{t^j}{j!}\]
 which implies
 \[\sum_{j=0}^n\frac{t^j}{j!}=\frac{e^t\Gamma(n+1,t)}{n!}\]
@@ -309,8 +309,8 @@ If $x$ is a positive real number and $a_k=\sum_{j=0}^k\frac{x^j}{j!}$, $b_k=\sum
 \\=&r_1^2+r_2^2-2r_{12}^2
 \end{align*}
 resulting in a bounding function for (\ref{MainInt2}) of
-\begin{align*}\frac{\sqrt{r_1^2+r_2^2-2r_{12}^2}}{n^{3/2}tr_3^2}=&\frac{\sqrt{(r_1-r_2)^2+2r_3(r_1r_2-r_{12}^2)}}{n^{3/2}tr_3^2}
-\\\le&\frac{r_1-r_2}{n^{3/2}tr_3^2}+\frac{\sqrt{2(r_1r_2-r_{12}^2)}}{n^{3/2}tr_3^{3/2}}.
+\begin{align*}\frac{\sqrt{r_1^2+r_2^2-2r_{12}^2}}{n^{3/2}tr_3^2}=&\frac{\sqrt{(r_1-r_2)^2+2(r_1r_2-r_{12}^2)}}{n^{3/2}tr_3^2}
+\\\le&\frac{r_1-r_2}{n^{3/2}tr_3^2}+\frac{\sqrt{2(r_1r_2-r_{12}^2)}}{n^{3/2}tr_3^2}.
 \end{align*}
 Then we note that
 \[\frac{d}{dt}a_k=n\sum_{j=1}^kj\frac{(nt)^{j-1}}{j!}=\frac{1}{t}b_k,\text{ and }\frac{d}{dt}b_k=\frac{1}{t}c_k,\] and thus
@@ -318,7 +318,7 @@ Then we note that
 Then
 \[\lim_{t\to\infty}\int_\mathbb{R}\frac{r_1-r_2}{n^{3/2}tr_3^2}dt=\lim_{t\rightarrow\infty}\frac{\sum_{k=m+1}^nk\frac{(nt)^k}{k!}}{n^{3/2}(a_m+a_n)}=n^{-1/2}.\]
 Moreover,
-\[\frac{r_1r_2-r_{12}^2}{n^3t^2r_3^3}=\frac{(a_n+a_m)c_nc_m-c_nb_m^2-c_mb_n^2}{n^3t^2(a_n+a_m)^2}.\]
+\[\frac{r_1r_2-r_{12}^2}{n^3t^2r_3^4}=\frac{(a_n+a_m)c_nc_m-c_nb_m^2-c_mb_n^2}{n^3t^2(a_n+a_m)^3}.\]
 To establish a bound for this portion we will require the following lemma.
 \begin{lemma}\label{ac-b2}
 $a_kc_k-b_k^2\le a_{k-1}b_k$.
@@ -344,11 +344,11 @@ Equipped with this lemma and the fact that $c_k=ntb_{k-1}+b_k$ and $nta_k=b_{k+1
 \\&+b_{n+1}b_{n-1}b_ma_m+b_na_nb_ma_m+b_{n-1}b_m^2a_m+b_nb_ma_ma_{m-1}.
 \end{align*}
 Since $n\ge m$, it is clear each term in this sum is less than or equal to $b_n^2a_nb_{m}$ or $b_na_na_{n-1}b_{m}$ for sufficiently large $n$ and thus we search for an integrable bound on the root of these terms divided by $n^{3/2}tr_3^2$.
-\[\frac{\sqrt{b_n^2a_nb_{m}}}{n^{3/2}tr_3^2}=\frac{a_{n-1}\sqrt{ta_na_{m-1}}}{(a_n+a_m)^2}\le\sqrt{\frac{ta_{m-1}}{a_n}}\le\left\{\begin{array}{ll}
-\sqrt{t},& t<\delta\\t^{-(n-m)/2},&t>\delta
+\[\frac{\sqrt{b_n^2a_nb_{m}}}{n^{3/2}tr_3^3}=\frac{a_{n-1}\sqrt{ta_na_{m-1}}}{(a_n+a_m)^3}\le\sqrt{\frac{ta_{m-1}}{a^3_n}}\le\left\{\begin{array}{ll}
+\sqrt{t},& t<\delta\\t^{-(3n-m)/2},&t>\delta
 \end{array}\right.\]which is integrable for $\delta>1$ and $m\le n-4$.
-\[\frac{\sqrt{b_na_na_{n-1}b_m}}{n^{3/2}tr_3^2}=\frac{a_{n-1}\sqrt{a_na_{m-1}}}{n^{1/2}(a_n+a_m)^2}\le \sqrt{\frac{a_{m-1}}{na_n}}\le\left\{\begin{array}{ll}
-n^{-1/2},& t<\delta\\n^{-1/2}t^{-(n-m+1)/2},&t>\delta
+\[\frac{\sqrt{b_na_na_{n-1}b_m}}{n^{3/2}tr_3^3}=\frac{a_{n-1}\sqrt{a_na_{m-1}}}{n^{1/2}(a_n+a_m)^3}\le \sqrt{\frac{a_{m-1}}{na^3_n}}\le\left\{\begin{array}{ll}
+n^{-1/2},& t<\delta\\n^{-1/2}t^{-(3n-m+1)/2},&t>\delta
 \end{array}\right.\]which is again integrable for $\delta>1$ and $m\le n-3$.
 Thus for $m=\alpha n$, $\alpha\in(0,1)$ we have the integrable sequence of bounding functions
 \begin{equation}\label{alphanbound}
