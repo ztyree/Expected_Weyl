@@ -172,7 +172,7 @@ and then using the change of variables $\lvert z\rvert^2=nt$ this becomes
 \end{equation}
 where $r_1$, $r_2$, $r_3$ and $r_{12}$ are defined as before with $nt$ substituted for $\lvert z\rvert^2$.  Note that with this change of variable, the notation $a_n$ becomes ambiguous, thus we clarify that the $n$ in $a_n$ refers only to the upper bound in the index of the sum, that is, $a_{n-1}=\sum_{j=0}^{n-1}(nt)^j/j!$.
 
-We use the incomplete Gamma function in combination with Laplace's method to evaluate the limit of the integrand.  We have the following identity for the incomplete Gamma function when $n\in\mathbb{N}$,
+We use the incomplete Gamma function in combination with Laplace's method to evaluate the limit of the integrand.  It is necessary to split the domain into two cases. We begin by treating the case $t<\alpha.$ We have the following identity for the incomplete Gamma function when $n\in\mathbb{N}$,
 \[\Gamma(n,t):=\int_t^\infty x^{n-1}e^{-x}dx=(n-1)!e^{-t}\sum_{j=0}^{n-1}\frac{t^j}{j!}\]
 which implies
 \[\sum_{j=0}^n\frac{t^j}{j!}=\frac{e^t\Gamma(n+1,t)}{n!}\]
@@ -183,7 +183,7 @@ and for a function $k=k(n)$ which is $O(1)$ as $n\rightarrow \infty$ such that $
 	=\frac{e^{nt}\Gamma(\alpha n-k+1,nt)}{(\alpha n-k)!}
 	=\frac{e^{nt}}{(\alpha n-k)!}\int_{nt}^\infty x^{\alpha n-k}e^{-x}dx.
 \end{equation}
-Using the fact that the gamma function can be expressed as the sum of the upper and lower incomplete gamma functions we can rewrite this expression as
+Using the fact that the Gamma function can be expressed as the sum of the upper and lower incomplete Gamma functions we can rewrite this expression as
 \begin{equation}
 	\label{LowerGamma}
 	\frac{e^{nt}}{(\alpha n-k)!}\int_{nt}^\infty x^{\alpha n-k}e^{-x}dx
